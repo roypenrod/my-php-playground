@@ -8,16 +8,23 @@
     <!-- stylesheets from other sources go here -->
     
     <!-- custom stylesheets go here -->    
+    <style>
+        pre {
+            font-size: 12pt;
+        }
+    </style>
     
     <!-- END EXTERNAL STYLESHEETS -->
 </head>
 <body>
     <!-- CUSTOM CONTENT -->
     <h1>SplFixedArray</h1>
+    <p><a href="../index.html">back to data structures list</a></p>    
+    
     <pre>
 <?php 
 
-echo 'create a new SPLFixedArray as $myArray';
+echo 'create a new SplFixedArray as $myArray';
 echo '<br /><br />';
 
 $myArray = new SplFixedArray(3);
@@ -165,7 +172,7 @@ echo '<br /><br />';
 ?>
     </pre>
     
-    <p><a href="index.html">back to data structures list</a></p>
+    <p><a href="../index.html">back to data structures list</a></p>
     <!-- END CUSTOM CONTENT -->
     
     <!-- JAVASCRIPT FILES -->
