@@ -222,19 +222,23 @@ echo '    echo $myStorage->current()->getType();';
 echo '<br />';
 echo 'result: ';
 echo '<br />';
-echo "    Fatal error:  Call to a member function getType() on a non-object";
+echo '    Awesome.  It worked.';
 echo '<br /><br />';
 
 $myStorage->rewind();
 echo $myStorage->current()->getType();
-echo '<br />';
-echo 'Awesome.  It worked.';
+
+
 echo '<br /><br />';
 
 echo '===================================';
 echo '<br /><br />';
 
 echo 'try attaching $myDog again, along with $myCat and $myHorse';
+echo '<br />';
+echo 'result: ';
+echo '<br />';
+echo '    NOTE:  Only one $myDog.  That means it attaches the same object only once.';
 echo '<br /><br />';
 
 $myStorage->attach($myDog);
@@ -242,7 +246,6 @@ $myStorage->attach($myCat);
 $myStorage->attach($myHorse);
 
 var_dump($myStorage);
-echo 'NOTE:  Only one $myDog.  That means it attaches the same object only once.';
 echo '<br /><br />';
 
 echo '===================================';
@@ -321,7 +324,68 @@ echo '<br /><br />';
 //    $myStorage->next();
 //}
 
-echo "<h2>What mistake did I make serializing and unserializing the object?</h2>";
+echo '===================================';
+echo '<br /><br />';
+
+echo 'create new SplObjectStorage as $ourStorageObject';
+echo '<br />';
+echo 'serialize $myStorage into the unserialize method of $ourStorageObject';
+echo '<br />';
+echo 'var_dump both $myStorage and $ourStorageObject to compare them';
+echo '<br />';
+echo 'result: ';
+echo '<br />';
+echo "   It worked.  It's the same object.";
+echo '<br /><br />';
+
+echo '$myStorage: ';
+echo '<br />';
+var_dump($myStorage);
+echo '<br />';
+
+echo '------------------------';
+echo '<br /><br />';
+
+$ourStorageObject = new SplObjectStorage();
+$ourStorageObject->unserialize($myStorage->serialize());
+
+echo '$ourStorageObject: ';
+echo '<br />';
+var_dump($ourStorageObject);
+echo '<br /><br />';
+
+echo '===================================';
+echo '<br /><br />';
+
+echo 'serialize $myStorage into $serializedString';
+echo '<br />';
+echo 'create new SplObjectStorage as $ourStorageObject';
+echo '<br />';
+echo 'unserialize $serializedString into $ourStorageObject';
+echo '<br />';
+echo 'var_dump $myStorage and $ourStorageObject';
+echo '<br />';
+echo 'Is it the same object as $myStorage?';
+echo '<br />';
+echo 'result: ';
+echo "    It worked.  It's the same object.";
+echo '<br /><br />';
+
+$serializedString = $myStorage->serialize();
+
+$ourStorageObject = new SplObjectStorage();
+
+$ourStorageObject->unserialize($serializedString);
+
+var_dump($myStorage);
+echo '<br /><br />';
+
+echo '------------------------';
+echo '<br /><br />';
+
+var_dump($ourStorageObject);
+echo '<br /><br />';
+
 
 ?>
     </pre>
