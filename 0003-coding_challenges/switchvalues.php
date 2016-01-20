@@ -196,6 +196,91 @@ echo 'Solution: '
     . '$a = $a[1]'
     . '<br /><br />';
 
+echo '====== ANOTHER ALTERNATE METHOD ======'
+    . '<br /><br />';
+
+echo "Here's another alternate method I found to solve the problem"
+    . '<br />'
+    . 'using list() and array().'
+    . '<br /><br />';
+
+echo '=== Actual Output from The Alternate Method ==='
+    . '<br /><br />';
+
+echo 'TEST CASE #1:'
+    . '<br /><br />';
+
+$a = 1;
+$b = 6;
+
+echo 'Before:'
+    . '<br />'
+    . '$a = ' . $a
+    . '<br />'
+    . '$b = ' . $b
+    . '<br /><br />';
+
+list($a, $b) = array($b, $a);
+
+echo 'After:'
+    . '<br />'
+    . '$a = ' . $a
+    . '<br />'
+    . '$b = ' . $b
+    . '<br /><br />';
+
+
+echo 'TEST CASE #2:'
+    . '<br /><br />';
+
+$a = 'cat';
+$b = 'dog';
+
+echo 'Before:'
+    . '<br />'
+    . '$a = ' . $a
+    . '<br />'
+    . '$b = ' . $b
+    . '<br /><br />';
+
+list($a, $b) = array($b, $a);
+
+echo 'After:'
+    . '<br />'
+    . '$a = ' . $a
+    . '<br />'
+    . '$b = ' . $b
+    . '<br /><br />';
+
+
+echo 'TEST CASE #3:'
+    . '<br /><br />';
+
+$a = [1, 2];
+$b = [3, 4];
+
+echo 'Before:'
+    . '<br />'
+    . '$a = [' . $a[0] . ', ' . $a[1] . ']'
+    . '<br />'
+    . '$b = [' . $b[0] . ', ' . $b[1] . ']'
+    . '<br /><br />';
+
+list($a, $b) = array($b, $a);
+
+echo 'After:'
+    . '<br />'
+    . '$a = [' . $a[0] . ', ' . $a[1] . ']'
+    . '<br />'
+    . '$b = [' . $b[0] . ', ' . $b[1] . ']'
+    . '<br /><br />';
+
+echo 'Solution: '
+    . '<br />'
+    . 'list($a, $b) = array($b, $a)'
+    . '<br /><br />';
+
+
 ?>
     </pre>
 
