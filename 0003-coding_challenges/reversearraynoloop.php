@@ -41,7 +41,7 @@ function reverseArrayNoLoop($forwardArray, &$reversedArray)
 </head>
 <body>
     <!-- CUSTOM CONTENT -->
-    <h1>Reverse Array Without Using Loop<</h1>
+    <h1>Reverse Array Without Using Loop</h1>
 
     <p>
         Challenge:  You have to reverse the array without using a loop.
@@ -60,8 +60,9 @@ function reverseArrayNoLoop($forwardArray, &$reversedArray)
 <?php
 
 echo 'The first solution is to just use the array_reverse function built into'
-    . "PHP. :-)"
     . '<br />'
+    . "PHP. :-)"
+    . '<br /><br />'
     . "But I'm pretty sure that's not what they have in mind. lol"
     . '<br /><br />'
     . 'My solution is to do it using recursion.'
@@ -78,6 +79,7 @@ echo 'The first solution is to just use the array_reverse function built into'
     . '<br /><br />'
     . 'Two birds, one stone, and all that.'
     . '<br /><br />';
+
 
 echo '******************************************'
     . '<br /><br />'
